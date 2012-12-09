@@ -79,7 +79,7 @@
     [self setOperationStarted:YES];
     
     //missing setting
-    if (!m_delegate||!m_searchValue||!m_itemList||m_executing) {
+    if (!m_delegate||!m_searchValue||!m_itemList) {
         return;
     }
     
@@ -104,13 +104,11 @@
     //call parent to decide which items will be removed
     list = [m_delegate diffItems:m_searchValue withList:list];
     
-    
     //forward the result to target method
     if([m_delegate respondsToSelector:@selector(didFinishFilterItems:)]) {
         [m_delegate didFinishFilterItems:list];
         
     }
-    
     // Set executing and finished states in KVO-compliance.
 	[self willChangeValueForKey:@"isExecuting"];
 	m_executing = NO;
@@ -136,6 +134,7 @@
     if (![self isOperationStarted]) {
         return;
     }
+    
     // Set executing and finished states in KVO-compliance.
 	[self willChangeValueForKey:@"isExecuting"];
 	m_executing = NO;
