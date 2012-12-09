@@ -1,5 +1,5 @@
 /*
- GSSearchOperation.h
+ GSSearchOperation.m
  
  Copyright (c) 2012 Gobas GmbH / Truong Vinh Tran
  
@@ -97,13 +97,13 @@
     
     
     NSMutableArray *list = [NSMutableArray arrayWithArray:self.itemList];
-    NSMutableArray *removeList = [NSMutableArray new];
+    //NSMutableArray *removeList = [NSMutableArray new];
     
     //call parent to decide which items will be removed
-    removeList = [m_delegate diffItems:m_searchValue withList:list];
+    list = [m_delegate diffItems:m_searchValue withList:list];
     
     //remove all objects which doesnt match
-    [list removeObjectsInArray:removeList];
+    //[list removeObjectsInArray:removeList];
     
     
     //forward the result to target method
