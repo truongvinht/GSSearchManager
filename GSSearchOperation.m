@@ -76,15 +76,12 @@
 
 - (void)start{
     
-    
     [self setOperationStarted:YES];
     
     //missing setting
     if (!m_delegate||!m_searchValue||!m_itemList||m_executing) {
         return;
     }
-    
-    
     
     //set finished to NO by start
     [self willChangeValueForKey:@"isFinished"];
