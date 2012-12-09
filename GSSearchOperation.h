@@ -28,6 +28,8 @@
 
 @interface GSSearchOperation : NSOperation
 
+@property (nonatomic,assign,getter = isOperationStarted) BOOL operationStarted;
+
 #pragma mark Variables
 
 /** Method to initial a search operation with all required informations
