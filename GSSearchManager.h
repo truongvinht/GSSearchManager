@@ -28,6 +28,13 @@
 /** Protocol to access the search results or interact with the search process*/
 @protocol GSSearchManagerDelegate <NSObject>
 
+/** Method which generate an array which needs to be removed from the original list
+ 
+ @param filterKey is the criteria string for removing
+ @param inputList is the array with all objects
+ */
+- (NSMutableArray*)diffItems:(NSString*)filterKey withList:(NSArray*)inputList;
+
 @optional
 /** Method will be called after the search request is done
  

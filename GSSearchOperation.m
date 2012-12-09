@@ -99,9 +99,8 @@
     NSMutableArray *list = [NSMutableArray arrayWithArray:self.itemList];
     NSMutableArray *removeList = [NSMutableArray new];
     
-    for (id baseItem in list) {
-        //create a list of removing items by comparing 
-    }
+    //call parent to decide which items will be removed
+    removeList = [m_delegate diffItems:m_searchValue withList:list];
     
     //remove all objects which doesnt match
     [list removeObjectsInArray:removeList];
