@@ -57,7 +57,7 @@
     
     //dont allow without delegate
     if (!m_delegate) {
-        NSLog(@"FolderVCSearchManager#%@ Missing delegate",NSStringFromSelector(_cmd));
+        NSLog(@"GSSearchManager#%@ Missing delegate",NSStringFromSelector(_cmd));
         return;
     }
     
